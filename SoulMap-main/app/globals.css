@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 28% 7%;
+    --foreground: 0 0% 95%;
+    --card: 220 24% 10%;
+    --card-foreground: 0 0% 95%;
+    --popover: 220 24% 10%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 38 65% 60%;
+    --primary-foreground: 220 28% 7%;
+    --secondary: 220 18% 16%;
+    --secondary-foreground: 0 0% 88%;
+    --muted: 220 18% 16%;
+    --muted-foreground: 220 8% 52%;
+    --accent: 38 65% 60%;
+    --accent-foreground: 220 28% 7%;
+    --destructive: 0 60% 50%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 18% 20%;
+    --input: 220 18% 18%;
+    --ring: 38 65% 60%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: 'cv11', 'ss01';
+    text-rendering: optimizeLegibility;
+    background: linear-gradient(135deg, hsl(220 28% 7%) 0%, hsl(220 30% 10%) 50%, hsl(220 28% 7%) 100%);
+    background-attachment: fixed;
+  }
+}
+
+@layer utilities {
+  .professional-card {
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 8px hsl(0 0% 0% / 0.2);
+  }
+  .professional-card:hover {
+    border-color: hsl(38 65% 60% / 0.5);
+    box-shadow: 0 8px 32px hsl(0 0% 0% / 0.4), 0 0 0 1px hsl(38 65% 60% / 0.2);
+    transform: translateY(-2px);
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(38 85% 70%) 0%, hsl(38 75% 60%) 50%, hsl(28 75% 55%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass-card {
+    background: linear-gradient(135deg, hsl(220 24% 10% / 0.8) 0%, hsl(220 24% 12% / 0.6) 100%);
+    backdrop-filter: blur(12px);
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.4s ease-out both;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 3s linear infinite;
+}
+
+.moment-image {
+  transition: transform 0.3s ease;
+}
+
+.moment-image:hover {
+  transform: scale(1.02);
+}
+
+.badge-memory {
+  background: hsl(210 70% 18%);
+  color: hsl(210 70% 75%);
+  border: 1px solid hsl(210 70% 32%);
+}
+
+.badge-future {
+  background: hsl(150 55% 18%);
+  color: hsl(150 65% 70%);
+  border: 1px solid hsl(150 55% 32%);
+}
+
+.badge-alternate {
+  background: hsl(280 45% 20%);
+  color: hsl(280 60% 75%);
+  border: 1px solid hsl(280 45% 34%);
+}
+
+.badge-dramatic {
+  background: hsl(0 45% 18%);
+  color: hsl(0 65% 70%);
+  border: 1px solid hsl(0 45% 32%);
+}
+
+.badge-dreamy {
+  background: hsl(240 38% 22%);
+  color: hsl(240 65% 78%);
+  border: 1px solid hsl(240 38% 36%);
+}
+
+.badge-nostalgic {
+  background: hsl(35 55% 18%);
+  color: hsl(35 75% 68%);
+  border: 1px solid hsl(35 55% 32%);
+}
+
+.badge-epic {
+  background: hsl(25 65% 17%);
+  color: hsl(25 85% 68%);
+  border: 1px solid hsl(25 65% 31%);
+}
+
+.badge-intimate {
+  background: hsl(330 38% 19%);
+  color: hsl(330 58% 74%);
+  border: 1px solid hsl(330 38% 33%);
+}
